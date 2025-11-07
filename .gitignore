@@ -50,9 +50,6 @@ application-dev.yml
 *.zip
 *.rar
 
-# Screenshots directory (will be created later)
-screenshots/
-
 # Maven wrapper
 .mvn/
 mvnw
