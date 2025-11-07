@@ -308,12 +308,6 @@ npm run build
 |---------|--------|
 | ![AI聊天](screenshots/chat.png) | ![留言板](screenshots/guestbook.png) |
 
-### 后台页面
-
-| 仪表盘 | 文章管理 |
-|--------|---------|
-| ![仪表盘](screenshots/dashboard.png) | ![文章管理](screenshots/article-manage.png) |
-
 ---
 
 ## 🗺️ 开发路线图
