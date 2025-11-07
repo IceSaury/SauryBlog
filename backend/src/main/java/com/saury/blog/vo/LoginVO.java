@@ -1,0 +1,47 @@
+package com.saury.blog.vo;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+/**
+ * 登录返回VO
+ *
+ * @author Saury
+ */
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class LoginVO {
+
+    /**
+     * Token
+     */
+    private String token;
+
+    /**
+     * 用户ID
+     */
+    private Long userId;
+
+    /**
+     * 用户名
+     */
+    private String username;
+
+    /**
+     * 昵称
+     */
+    private String nickname;
+
+    /**
+     * 头像
+     */
+    private String avatar;
+
+    /**
+     * 角色
+     */
+    private Integer role;
+}
+

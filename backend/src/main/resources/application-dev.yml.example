@@ -1,0 +1,33 @@
+# 开发环境配置模板
+# 
+# 使用说明：
+# 1. 复制此文件并重命名为 application-dev.yml
+# 2. 将下面的占位符替换为你自己的配置信息
+# 3. application-dev.yml 已添加到 .gitignore，不会被提交到Git仓库
+# 
+# ⚠️ 重要：application-dev.yml 包含敏感信息，请勿提交到代码仓库
+
+spring:
+  # MySQL数据库配置
+  datasource:
+    url: jdbc:mysql://localhost:3306/saury_blog?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: your-mysql-password  # ⚠️ 修改为你的MySQL密码
+  
+  # Redis配置
+  redis:
+    host: localhost
+    port: 6379
+    password: your-redis-password  # ⚠️ 修改为你的Redis密码（如果没有密码可留空）
+    database: 0
+
+# 阿里云OSS配置
+aliyun:
+  oss:
+    access-key-id: your-access-key-id  # ⚠️ 修改为你的AccessKeyId
+    access-key-secret: your-access-key-secret  # ⚠️ 修改为你的AccessKeySecret
+    endpoint: oss-cn-hangzhou.aliyuncs.com  # ⚠️ 修改为你的Endpoint（如：oss-cn-shenzhen.aliyuncs.com）
+    bucket-name: your-bucket-name  # ⚠️ 修改为你的Bucket名称
+    prefix: saury-blog/avatar/  # 文件存储路径前缀（可选修改）
+    domain:  # 自定义域名（可选，如果配置了CDN加速域名）
+

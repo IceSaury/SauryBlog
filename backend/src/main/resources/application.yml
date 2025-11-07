@@ -1,0 +1,113 @@
+server:
+  port: 8088
+  servlet:
+    context-path: /api
+
+spring:
+  application:
+    name: saury-blog
+  
+  # 激活开发环境配置
+  profiles:
+    active: dev
+  
+  # 数据源配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ${spring.datasource.url}
+    username: ${spring.datasource.username}
+    password: ${spring.datasource.password}
+  
+  # Redis配置
+  data:
+    redis:
+      host: ${spring.redis.host}
+      port: ${spring.redis.port}
+      password: ${spring.redis.password}
+      database: ${spring.redis.database}
+      timeout: 5000ms
+      lettuce:
+        pool:
+          max-active: 8
+          max-wait: -1ms
+          max-idle: 8
+          min-idle: 0
+  
+  # 文件上传配置
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 20MB
+
+  # Jackson配置
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    serialization:
+      write-dates-as-timestamps: false
+
+  # Spring AI配置
+  ai:
+    openai:
+      base-url: https://dashscope.aliyuncs.com/compatible-mode
+      api-key: ${OPENAI_API_KEY}
+      chat:
+        options:
+          model: qwen3-max
+          temperature: 0.7
+
+# MyBatis-Plus配置
+mybatis-plus:
+  configuration:
+    # 日志
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    # 驼峰转下划线
+    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      # 主键类型
+      id-type: auto
+      # 逻辑删除字段
+      logic-delete-field: deleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+  # mapper xml文件路径
+  mapper-locations: classpath*:/mapper/**/*.xml
+
+# JWT配置
+jwt:
+  # 密钥（实际使用时应该用更复杂的密钥）
+  secret: SauryBlogCyberpunkStylePersonalWebsiteSecretKey2024
+  # token有效期（7天，单位：秒）
+  expiration: 604800
+  # token请求头名称
+  header: Authorization
+  # token前缀
+  prefix: Bearer 
+
+# 日志配置
+logging:
+  level:
+    com.saury.blog: debug
+    com.saury.blog.mapper: debug
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{50} - %msg%n"
+  charset:
+    console: UTF-8
+
+# 阿里云OSS配置
+aliyun:
+  oss:
+    # 访问密钥ID（具体值在 application-dev.yml 中配置）
+    access-key-id: ${aliyun.oss.access-key-id}
+    # 访问密钥Secret（具体值在 application-dev.yml 中配置）
+    access-key-secret: ${aliyun.oss.access-key-secret}
+    # Endpoint地域节点
+    endpoint: ${aliyun.oss.endpoint}
+    # Bucket名称
+    bucket-name: ${aliyun.oss.bucket-name}
+    # 文件存储路径前缀
+    prefix: ${aliyun.oss.prefix:saury-blog/avatar/}
+    # 自定义域名（可选）
+    domain: ${aliyun.oss.domain:}
+

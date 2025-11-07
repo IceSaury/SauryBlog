@@ -1,0 +1,50 @@
+// 赛博朋克配色方案
+// 霓虹色
+$neon-cyan: #00F0FF;
+$neon-magenta: #FF66B2;
+$neon-purple: #A200FF;
+$neon-yellow: #FFED00;
+$neon-green: #00FF9F;
+
+// 背景色
+$bg-primary: #0a0e27;
+$bg-secondary: #141c3a;
+$bg-card: rgba(20, 28, 58, 0.8);
+$bg-overlay: rgba(10, 14, 39, 0.95);
+
+// 文字颜色
+$text-primary: #E0E0E0;
+$text-secondary: #B0B0B0;
+$text-disabled: #666666;
+
+// 边框颜色
+$border-primary: $neon-cyan;
+$border-secondary: rgba(0, 240, 255, 0.3);
+
+// 阴影
+$shadow-neon-cyan: 0 0 8px rgba(0, 240, 255, 0.6), 0 0 15px rgba(0, 240, 255, 0.3);
+$shadow-neon-magenta: 0 0 8px rgba(255, 102, 178, 0.6), 0 0 15px rgba(255, 102, 178, 0.3);
+$shadow-neon-purple: 0 0 8px rgba(162, 0, 255, 0.6), 0 0 15px rgba(162, 0, 255, 0.3);
+
+// 渐变
+$gradient-cyber: linear-gradient(135deg, $neon-cyan 0%, $neon-purple 100%);
+$gradient-card: linear-gradient(135deg, rgba(0, 240, 255, 0.1) 0%, rgba(162, 0, 255, 0.1) 100%);
+
+// 字体
+$font-family-base: 'Microsoft YaHei', 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
+$font-family-code: 'Consolas', 'Monaco', 'Courier New', monospace;
+
+// 尺寸
+$header-height: 70px;
+$sidebar-width: 250px;
+$container-max-width: 1200px;
+
+// 断点
+$breakpoint-mobile: 768px;
+$breakpoint-tablet: 1024px;
+$breakpoint-desktop: 1440px;
+
+// 过渡
+$transition-base: all 0.3s ease;
+$transition-fast: all 0.15s ease;
+
