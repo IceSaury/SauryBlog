@@ -1,0 +1,48 @@
+# 生产环境配置
+spring:
+  # MySQL数据库配置（通过环境变量注入）
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+  
+  # Redis配置（通过环境变量注入）
+  data:
+    redis:
+      host: ${SPRING_REDIS_HOST}
+      database: ${SPRING_REDIS_DATABASE}
+      port: ${SPRING_REDIS_PORT}
+      password: ${SPRING_REDIS_PASSWORD}
+
+# JWT配置（通过环境变量注入）
+jwt:
+  secret: ${JWT_SECRET}
+
+# 阿里云OSS配置（通过环境变量注入）
+aliyun:
+  oss:
+    access-key-id: ${ALIYUN_OSS_ACCESS_KEY_ID}
+    access-key-secret: ${ALIYUN_OSS_ACCESS_KEY_SECRET}
+    endpoint: ${ALIYUN_OSS_ENDPOINT}
+    bucket-name: ${ALIYUN_OSS_BUCKET_NAME}
+    prefix: ${ALIYUN_OSS_PREFIX}
+
+# 日志配置（生产环境）
+logging:
+  level:
+    root: info
+    com.saury.blog: info
+    com.saury.blog.mapper: warn
+  file:
+    name: /app/logs/saury-blog.log
+    max-size: 100MB
+    max-history: 30
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{50} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{50} - %msg%n"
+
+# MyBatis-Plus配置（生产环境关闭SQL日志）
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.nologging.NoLoggingImpl
+

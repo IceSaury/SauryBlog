@@ -148,7 +148,31 @@ SauryBlog/
 
 ## 🚀 快速开始
 
-### 环境要求
+### 🐳 Docker 部署（推荐）
+
+使用 Docker 可以一键部署所有服务，无需手动安装依赖。
+
+```bash
+# 1. 克隆项目
+git clone https://github.com/IceSaury/SauryBlog.git
+cd SauryBlog
+
+# 2. 配置环境变量（修改密码等信息）
+cp .env.example .env
+vim .env
+
+# 3. 一键部署
+chmod +x deploy.sh
+./deploy.sh
+```
+
+📖 **详细文档**：[Docker 部署完整指南](./DOCKER_DEPLOY.md)
+
+---
+
+### 📦 传统部署
+
+#### 环境要求
 
 - JDK 21+
 - Node.js 18+
